@@ -1,10 +1,14 @@
 <script lang="ts">
-	// All the other stuff.
-	import Navigation from '$lib/components/Navigation.svelte';
-	import SizedBox from '$lib/components/SizedBox.svelte';
-	import { AppShell, AppBar, Avatar, Drawer, initializeStores } from '@skeletonlabs/skeleton';
-	import { getDrawerStore, getToastStore } from '@skeletonlabs/skeleton';
+	import '../app.postcss';
+
+	// Floating UI for Popups
+	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
+	import { AppShell, AppBar, Avatar, Drawer, initializeStores, storePopup, Modal, Toast, getDrawerStore, getToastStore } from '@skeletonlabs/skeleton';
+	
+	// For other things.
 	import MediaQuery from '$lib/components/MediaQuery.svelte';
+	import Navigation from '$lib/components/Navigation.svelte';
+	import SizedBox from '$lib/components/SizedBox.svelte';	
 
 	// Initialize the stores.
 	initializeStores();
@@ -19,7 +23,22 @@
 	function drawerOpen(): void {
 		drawerStore.open();
 	}
+
+	// Do these things.
+	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
+
+<Modal />
+
+<!-- For mobile and tablet screens -->
+<MediaQuery query="(max-width: 1024px)" let:matches>
+	{#if matches}
+		<Toast position="b" />
+	{:else}
+		<!-- For desktop screens -->
+		<Toast position="tr" />
+	{/if}
+</MediaQuery>
 
 <Drawer
 	bgBackdrop="bg-transparent"
@@ -54,20 +73,6 @@
 						class="pb-1 pt-1 pl-2 pr-2 w-fit h-fit border rounded-md text-center items-center justify-center mr-2"
 					>
 						<i class="fas fa-envelope text-white"></i>
-					</button>
-
-					<!-- For the notifications-->
-					<button
-						class="pb-1 pt-1 pl-2 pr-2 w-fit h-fit border rounded-md text-center items-center justify-center mr-2"
-					>
-						<i class="fas fa-bell text-white"></i>
-					</button>
-
-					<!-- For the search kini -->
-					<button
-						class="pb-1 pt-1 pl-2 pr-2 w-fit h-fit border rounded-md text-center items-center justify-center mr-4"
-					>
-						<i class="fas fa-magnifying-glass text-white"></i>
 					</button>
 
 					<!-- For the avatar widget -->
@@ -108,27 +113,6 @@
 					</div>
 
 					<div class="flex flex-row items-center">
-						<!-- For the email thing -->
-						<button
-							class="pb-1 pt-1 pl-2 pr-2 w-fit h-fit border border-gray-400 rounded-md text-center items-center justify-center mr-4"
-						>
-							<i class="fas fa-envelope text-gray-600"></i>
-						</button>
-
-						<!-- For the notifications-->
-						<button
-							class="pb-1 pt-1 pl-2 pr-2 w-fit h-fit border border-gray-400 rounded-md text-center items-center justify-center mr-4"
-						>
-							<i class="fas fa-bell text-gray-600"></i>
-						</button>
-
-						<!-- For the search kini -->
-						<button
-							class="pb-1 pt-1 pl-2 pr-2 w-fit h-fit border border-gray-400 rounded-md text-center items-center justify-center mr-6"
-						>
-							<i class="fas fa-magnifying-glass text-gray-600"></i>
-						</button>
-
 						<!-- For the avatar widget -->
 						<Avatar initials="SH" fill="fill-gray-900" background="bg-gray-300" width="w-14" />
 
@@ -137,9 +121,9 @@
 
 						<!-- More user related info. -->
 						<div class="flex flex-col">
-							<p class="text-white font-bold text-sm">Student Helper</p>
-							<p class="text-white text-sm">Administator</p>
-							<p class="text-white text-sm">admin@calebuniversity.edu.ng</p>
+							<p class="text-black font-bold text-sm">Student Helper</p>
+							<p class="text-gray-800 text-sm">Administator</p>
+							<p class="text-gray-700 text-sm">admin@calebuniversity.edu.ng</p>
 						</div>
 					</div>
 				</div>

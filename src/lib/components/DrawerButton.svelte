@@ -9,7 +9,7 @@
 	export let altText: string = "Drawer Item";
 </script>
 
-<div class="scu-drawer-button flex flex-row {isActive ? "text-primary-700 scu-active bg-white" : ""}">
+<div class="app-drawer-button flex flex-row {isActive ? "text-primary-700 app-active bg-white" : ""}">
 	<img alt={altText} src={image} height="25" width="25"/>
 	<a href={link} on:click={onClick}>{name}</a>
 </div>
