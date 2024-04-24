@@ -2,6 +2,7 @@
 	import { getDrawerStore } from '@skeletonlabs/skeleton';
 	import DrawerButton from './DrawerButton.svelte';
 	import { browser } from '$app/environment';
+	import SizedBox from './SizedBox.svelte';
 
 	// Get the drawer
 	const drawerStore = getDrawerStore();
@@ -30,6 +31,9 @@
 
 <nav class="list-nav p-4 bg-primary-700 h-full">
 	<ul>
+		<li>
+			<SizedBox height="h-24" /> 
+		</li>
 		<li>
 			<DrawerButton
 				name="Schedules"

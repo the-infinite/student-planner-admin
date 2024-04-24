@@ -44,7 +44,7 @@ export const schedulesCollection = database.collection(Constants.scheduleReferen
 /**
  * The collection of all schedules in our database.
  */
-export const collefgesCollection = database.collection(Constants.collegesReference);
+export const collegesCollection = database.collection(Constants.collegesReference);
 
 /**
  * The collection of all schedules in our database.
