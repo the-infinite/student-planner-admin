@@ -1,5 +1,10 @@
 export type ScheduleModel = {
   /**
+   * This is the identifier of this schedule.
+   */
+  uid: string;
+ 
+  /**
      * The topic of the class or event. Depending on the kind of
      */
   topic: string | null;
@@ -62,10 +67,10 @@ export type ScheduleModel = {
   /**
    * This is the level of that this event is tailored to.
    */
-  level: number,
+  level: number | "Open";
 
   /**
    * This is the list of hosts for this event in question.
    */
-  hosts: Array<string>
+  hosts: Array<string>;
 }; 

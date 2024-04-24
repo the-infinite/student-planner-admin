@@ -3,9 +3,7 @@
 </script>
 
 <div
-	class="{$page.status > 499
-		? 'bg-error-100'
-		: 'bg-primary-100'} w-full h-96 flex flex-col justify-center items-center"
+	class="bg-transparent w-full  h-96 flex flex-col justify-center items-center"
 >
 	{#if $page.status === 404}
 		<i class="fas fa-circle-question text-primary-700 text-8xl mb-5"></i>

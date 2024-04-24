@@ -3,7 +3,7 @@
 
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
-	import { AppShell, AppBar, Avatar, Drawer, initializeStores, storePopup, Modal, Toast, getDrawerStore, getToastStore } from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, Avatar, Drawer, initializeStores, storePopup, Modal, Toast, getDrawerStore } from '@skeletonlabs/skeleton';
 	
 	// For other things.
 	import MediaQuery from '$lib/components/MediaQuery.svelte';
@@ -15,7 +15,6 @@
 
 	// Fetch the drawer store
 	const drawerStore = getDrawerStore();
-	const toastStore = getToastStore();
 
 	/**
 	 * The drawer store.

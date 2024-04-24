@@ -10,6 +10,17 @@ export const load = (async () => {
     try {
         (await schedulesCollection.get()).forEach(result => {
             const schedule = result.data() as ScheduleModel
+            schedule.dayOfWeek = result.data().day;
+            schedule.startsAt = result.data().starts;
+            schedule.endsAt = result.data().ends;
+            schedule.uid = result.id;
+
+            // Delete the remnant keys.
+            delete (schedule as any).starts;
+            delete (schedule as any).ends; 
+            delete (schedule as any).day;
+
+            // Push this forward.
             schedules.push(schedule);
         });
     } catch (e) {

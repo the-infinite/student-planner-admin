@@ -9,14 +9,12 @@ export const load = (async () => {
     // This is fine.
     try {
         (await departmentCollection.get()).forEach(result => {
-            const schedule = result.data() as DepartmentModel
-            departments.push(schedule);
+            const department = result.data() as DepartmentModel
+            departments.push(department);
         });
     } catch (e) {
         error = e as Error
     }
-
-    console.log(departments)
 
     // This is fine too.
     return {
