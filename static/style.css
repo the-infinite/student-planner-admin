@@ -1,15 +1,15 @@
 
-.scu-drawer-button {
+.app-drawer-button {
 	border-radius: 10px;
 	margin-bottom: 15px;
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
-.scu-drawer-button.scu-active {
+.app-drawer-button.app-active {
 	background-color: white;
 }
 
-.scu-drawer-button li a {
+.app-drawer-button li a {
 	background: none;
 }
