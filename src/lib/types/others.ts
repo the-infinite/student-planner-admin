@@ -11,6 +11,11 @@ export type DepartmentModel = {
    * The name of this department as a string.
    */
   name: string;
+
+  /**
+   * The ID of this department.
+   */
+  uid: string;
 };
 
 /**
@@ -26,4 +31,9 @@ export type CollegeModel = {
    * The name of this college as a string.
    */
   name: string;
+
+  /**
+   * The ID of this college.
+   */
+  uid: string;
 };

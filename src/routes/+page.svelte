@@ -51,7 +51,9 @@
 		const pm = hour > 12;
 
 		// Now, do the reduction
-		hour = hour - 12;
+		if(hour > 12) {
+			hour = hour - 12
+		}
 
 		// If this is midnight
 		if (hour === 0) {

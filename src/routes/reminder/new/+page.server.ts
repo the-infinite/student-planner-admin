@@ -11,10 +11,12 @@ export const load = (async () => {
     try {
         (await collegesCollection.get()).forEach(result => {
             const college = result.data() as CollegeModel
+            college.uid = result.id;
             colleges.push(college);
         });
         (await departmentCollection.get()).forEach(result => {
             const department = result.data() as DepartmentModel
+            department.uid = result.id;
             departments.push(department);
         });
     } catch (e) {

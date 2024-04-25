@@ -20,7 +20,7 @@ export type ScheduleModel = {
    * would be attached to this event or schedule when the user clicks and then views this
    * description.
    */
-  description: string | null,
+  description: string | null;
 
   /**
    * The day of the week this event starts at

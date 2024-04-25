@@ -10,6 +10,7 @@ export const load = (async () => {
     try {
         (await collegesCollection.get()).forEach(result => {
             const college = result.data() as CollegeModel
+            college.uid = result.id;
             colleges.push(college);
         });
     } catch (e) {

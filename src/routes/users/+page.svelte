@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import { getToastStore } from '@skeletonlabs/skeleton';
+	import ComingSoon from '$lib/components/ComingSoon.svelte';
 
 	export let data: PageData;
 
@@ -19,3 +20,5 @@
 		}
 	});
 </script>
+
+<ComingSoon />
